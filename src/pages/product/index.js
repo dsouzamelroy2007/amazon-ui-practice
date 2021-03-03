@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import Information from '../../components/product/Information';
+import ImageSlider from '../../components/product/ImageSlider';
 import productsApi from 'api/products';
 import Loader from '../../components/general/Loader';
 import Error from '../../components/general/Error'
@@ -40,6 +41,7 @@ function ProductPage() {
   } else if (product) {
     return (
       <div className="product">
+        <ImageSlider product={product} />
         <Information product={product} />
       </div>
     );
